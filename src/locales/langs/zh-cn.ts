@@ -228,7 +228,7 @@ const local: App.I18n.Schema = {
     plugin_typeit: '打字机',
     plugin_tables: '表格',
     plugin_tables_vtable: 'VTable',
-    lottery3dhistory: '历史记录',
+    lottery3dhistory: '开奖列表',
   },
   page: {
     login: {

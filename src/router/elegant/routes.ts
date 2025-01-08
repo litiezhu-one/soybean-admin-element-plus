@@ -262,7 +262,9 @@ export const generatedRoutes: GeneratedRoute[] = [
     component: 'layout.base$view.lottery3dhistory',
     meta: {
       title: 'lottery3dhistory',
-      i18nKey: 'route.lottery3dhistory'
+      i18nKey: 'route.lottery3dhistory',
+      icon: 'ri:money-dollar-circle-line',
+      order: 2
     }
   },
   {
