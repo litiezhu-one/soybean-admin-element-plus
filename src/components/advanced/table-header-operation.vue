@@ -6,9 +6,15 @@ defineOptions({ name: 'TableHeaderOperation' });
 interface Props {
   disabledDelete?: boolean;
   loading?: boolean;
+  showDelete?: boolean;
+  showAdd?: boolean;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  disabledDelete: true,
+  showDelete: true,
+  showAdd: true
+});
 
 interface Emits {
   (e: 'add'): void;
@@ -39,13 +45,13 @@ function refresh() {
   <ElSpace direction="horizontal" wrap justify="end" class="lt-sm:w-200px">
     <slot name="prefix"></slot>
     <slot name="default">
-      <ElButton plain type="primary" @click="add">
+      <ElButton v-if="showAdd" plain type="primary" @click="add">
         <template #icon>
           <icon-ic-round-plus class="text-icon" />
         </template>
         {{ $t('common.add') }}
       </ElButton>
-      <ElPopconfirm :title="$t('common.confirmDelete')" @confirm="batchDelete">
+      <ElPopconfirm v-if="showDelete" :title="$t('common.confirmDelete')" @confirm="batchDelete">
         <template #reference>
           <ElButton type="danger" plain :disabled="disabledDelete">
             <template #icon>

@@ -263,7 +263,6 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'lottery3dhistory',
       i18nKey: 'route.lottery3dhistory',
-      icon: 'ri:money-dollar-circle-line',
       order: 2
     }
   },
@@ -331,6 +330,15 @@ export const generatedRoutes: GeneratedRoute[] = [
         }
       }
     ]
+  },
+  {
+    name: 'monthwelfarelottery',
+    path: '/monthwelfarelottery',
+    component: 'layout.base$view.monthwelfarelottery',
+    meta: {
+      title: 'monthwelfarelottery',
+      i18nKey: 'route.monthwelfarelottery'
+    }
   },
   {
     name: 'multi-menu',

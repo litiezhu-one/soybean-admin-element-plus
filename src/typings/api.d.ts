@@ -13,6 +13,10 @@ declare namespace Api {
       size: number;
       /** total count */
       total: number;
+      /** 搜索条件 */
+      keyword: string;
+      /** 月份 */
+      month: number;
     }
 
     /** common params of paginating query list data */
@@ -221,5 +225,56 @@ declare namespace Api {
       pId: number;
       children?: MenuTree[];
     };
+  }
+
+  namespace WelfareLottery {
+    type CommonSearchParams = Pick<Common.PaginatingCommonParams, 'current' | 'size' | 'keyword'>;
+
+    type WelfareLottery3d = Common.CommonRecord<{
+      drawingNum: string;
+      drawingTest: string;
+      drawingDate: string;
+      drawingPeriods: string;
+      百位杀数: string;
+      期杀数: string;
+      期尾杀数: string;
+      首尾边距: string;
+      开奖合数: string;
+      试机杀数: string;
+      熟数: string;
+      生数: string;
+      试机跨度数: string;
+    }>;
+    type LotterySearchParams = CommonType.RecordNullable<
+      Pick<Api.WelfareLottery.WelfareLottery3d, any> & CommonSearchParams
+    >;
+    type WelfareLotteryList = Common.PaginatingQueryRecord<WelfareLottery3d>;
+
+    type WelfareLottery3dRespDto = Common.CommonRecord<{
+      yearMonth: string;
+      开奖期数: number;
+      百位次数: number;
+      期次数: number;
+      期尾次数: number;
+      首尾边距次数: number;
+      开奖合数次数: number;
+      试机次数: number;
+      生一熟二次数: number;
+      生二熟一次数: number;
+      生三次数: number;
+      熟三次数: number;
+      跨一次数: number;
+      跨二次数: number;
+      跨三次数: number;
+      不跨次数: number;
+      跨大次数: number;
+      跨小次数: number;
+      试机号重复次数: number;
+      试机号重复时杀中次数: number;
+    }>;
+    type WelfareLottery3dRespDtoParams = CommonType.RecordNullable<
+      Pick<Api.WelfareLottery.WelfareLottery3d, any> & CommonSearchParams
+    >;
+    type WelfareLottery3dRespDtoList = Common.PaginatingQueryRecord<WelfareLottery3dRespDto>;
   }
 }
