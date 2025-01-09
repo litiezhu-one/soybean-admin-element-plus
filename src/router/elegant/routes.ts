@@ -337,7 +337,8 @@ export const generatedRoutes: GeneratedRoute[] = [
     component: 'layout.base$view.monthwelfarelottery',
     meta: {
       title: 'monthwelfarelottery',
-      i18nKey: 'route.monthwelfarelottery'
+      i18nKey: 'route.monthwelfarelottery',
+      order: 3
     }
   },
   {

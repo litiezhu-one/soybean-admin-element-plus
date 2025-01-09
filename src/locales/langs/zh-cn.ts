@@ -229,6 +229,7 @@ const local: App.I18n.Schema = {
     plugin_tables: '表格',
     plugin_tables_vtable: 'VTable',
     lottery3dhistory: '开奖列表',
+    monthwelfarelottery: '月份统计',
   },
   page: {
     login: {

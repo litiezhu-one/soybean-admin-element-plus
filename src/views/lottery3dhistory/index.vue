@@ -48,7 +48,7 @@ const { columns, data, getData, loading, mobilePagination } = useTable({
   showTotal: true,
   apiParams: {
     current: 1,
-    size: 100,
+    size: 30,
     keyword: undefined,
     remark: undefined
   },
