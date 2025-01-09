@@ -12,11 +12,11 @@ const getFormatter = (row: any, key: string) => {
   const total = Number(((row[key] / row.开奖期数) * 100).toFixed(2));
   return (
     <ElProgress
-      class="mx-2"
+      class="mx-4"
       text-inside={true}
       stroke-width="26"
       percentage={total}
-      status={total > 50 ? 'success' : 'exception'}
+      status={total > 60 ? 'success' : 'exception'}
     />
   );
 };
@@ -32,12 +32,12 @@ const { columns, data, getData, loading, mobilePagination } = useTable({
   columns: () => [
     { prop: 'yearMonth', label: '统计年月' },
     { prop: '开奖期数', label: '开奖数', width: 100 },
-    { prop: '百位次数', label: '百位概率', align: 'left', formatter: row => getFormatter(row, '百位次数') },
-    { prop: '期次数', label: '期概率', align: 'left', formatter: row => getFormatter(row, '期次数') },
-    { prop: '期尾次数', label: '期尾概率', align: 'left', formatter: row => getFormatter(row, '期尾次数') },
-    { prop: '首尾边距次数', label: '首尾边距概率', align: 'left', formatter: row => getFormatter(row, '首尾边距次数') },
-    { prop: '开奖合数次数', label: '开奖合数概率', align: 'left', formatter: row => getFormatter(row, '开奖合数次数') },
-    { prop: '试机次数', label: '试机概率', align: 'left', formatter: row => getFormatter(row, '试机次数') },
+    { prop: '百位次数', label: '百位概率', formatter: row => getFormatter(row, '百位次数') },
+    { prop: '期次数', label: '期概率', formatter: row => getFormatter(row, '期次数') },
+    { prop: '期尾次数', label: '期尾概率', formatter: row => getFormatter(row, '期尾次数') },
+    { prop: '首尾边距次数', label: '首尾边距概率', formatter: row => getFormatter(row, '首尾边距次数') },
+    { prop: '开奖合数次数', label: '开奖合数概率', formatter: row => getFormatter(row, '开奖合数次数') },
+    { prop: '试机次数', label: '试机概率', formatter: row => getFormatter(row, '试机次数') },
   ]
 });
 </script>
